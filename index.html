@@ -6,8 +6,10 @@
   <title>Furniture Rental Landing Page</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-container">
@@ -17,6 +19,8 @@
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#why-choose-us">Why Choose Us</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="login.html" class="auth-link">Login</a></li>
+        <li><a href="signup.html" class="auth-link signup">Sign Up</a></li>
       </ul>
       <div class="hamburger" id="hamburger">
         <span></span>
@@ -31,7 +35,7 @@
     <div class="hero-content">
       <h1>Rent Stylish & Affordable Furniture with Ease!</h1>
       <p>Hassle-free furniture rentals for your home & office – delivered to your doorstep.</p>
-      <a href="#" class="cta-button">Browse Furniture</a>
+      <a href="browse-furniture.html" class="cta-button">Browse Furniture</a>
     </div>
   </section>
 
@@ -84,28 +88,28 @@
     </div>
   </section>
 
-  <!-- Why Choose Us Section -->
-  <section class="why-choose-us" id="why-choose-us">
-    <h2>Why Choose Us?</h2>
-    <div class="benefits">
-      <div class="benefit-card">
-        <img src="bed.png" alt="Flexible Plans">
-        <h3>Flexible Rental Plans</h3>
-      </div>
-      <div class="benefit-card">
-        <img src="furnitures.png" alt="Affordable Prices">
-        <h3>Affordable Prices</h3>
-      </div>
-      <div class="benefit-card">
-        <img style="background-size: cover"src="sofas.png" alt="Free Maintenance">
-        <h3>Free Maintenance</h3>
-      </div>
-      <div class="benefit-card">
-        <img src="furniture.png" alt="Quick Delivery">
-        <h3>Quick & Easy Delivery</h3>
-      </div>
+<!-- Why Choose Us Section -->
+<section class="why-choose-us" id="why-choose-us">
+  <h2 id="whyChooseHeading">Why Choose Us?</h2>
+  <div class="benefits">
+    <div class="benefit-card">
+      <img src="bed.png" alt="Flexible Plans">
+      <h3>Flexible Rental Plans</h3>
     </div>
-  </section>
+    <div class="benefit-card">
+      <img src="furnitures.png" alt="Affordable Prices">
+      <h3>Affordable Prices</h3>
+    </div>
+    <div class="benefit-card">
+      <img style="background-size: cover" src="sofas.png" alt="Free Maintenance">
+      <h3>Free Maintenance</h3>
+    </div>
+    <div class="benefit-card">
+      <img src="furniture.png" alt="Quick Delivery">
+      <h3>Quick & Easy Delivery</h3>
+    </div>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer id="contact">
@@ -113,23 +117,63 @@
       <div class="contact">
         <p>Contact Us: <a href="tel:+123456789">+123 456 789</a> | <a href="mailto:info@furniturerental.com">info@furniturerental.com</a></p>
         <div class="social-links">
-          <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+          <a href="#" class="social-link"><i class="fab fa-facebook"></i> Facebook</a> | 
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i> Instagram</a> | 
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i> Twitter</a>
+
         </div>
       </div>
       <div class="faq">
         <a href="#">FAQs</a>
       </div>
-      <p class="copyright">&copy; 2023 Furniture Rental. All rights reserved.</p>
+      <p class="copyright">&copy; 2025 Furniture Rental. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- JavaScript for Navbar Toggle -->
+  <!-- JavaScript for Heading Effect -->
   <script>
+    // Get the h2 element
+    const heading = document.getElementById("whyChooseHeading");
+
+    // Add an event listener for the click event
+    heading.addEventListener("mouseover", function() {
+      // Change the text of the h2 when clicked
+      heading.innerHTML = "Discover the Best Rental Options!";
+    });
+    // Revert text when the cursor moves away from the h2 element
+    heading.addEventListener("mouseout", function() {
+      heading.innerHTML = "Why Choose Us?";
+    });
+  </script>
+
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    // Get the hamburger button and nav links elements
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.querySelector('.nav-links');
 
+    // Toggle the 'active' class on nav-links when hamburger is clicked
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active'); // Also toggle active class on hamburger
+    });
+
+    // Close the menu when a link is clicked
+    const navLinkItems = document.querySelectorAll('.nav-links a');
+    navLinkItems.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
+    });
+
+    // Close the menu when clicking outside
+    document.addEventListener('click', (event) => {
+      // Check if click is outside both the hamburger button and nav menu
+      if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+      }
     });
   </script>
 </body>

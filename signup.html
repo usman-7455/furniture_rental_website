@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Furniture Rental</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .error-message {
+      color: #e74c3c;
+      font-size: 0.85rem;
+      margin-top: 4px;
+      display: none;
+    }
+    
+    .input-icon.error input {
+      border-color: #e74c3c;
+    }
+    
+    .input-icon.success input {
+      border-color: #2ecc71;
+    }
+    
+    .password-strength {
+      margin-top: 4px;
+      font-size: 0.85rem;
+    }
+    
+    .strength-meter {
+      height: 4px;
+      width: 100%;
+      background: #ddd;
+      margin-top: 4px;
+    }
+    
+    .strength-meter div {
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s;
+    }
+    
+    .weak { background-color: #e74c3c; }
+    .medium { background-color: #f39c12; }
+    .strong { background-color: #2ecc71; }
+  </style>
+</head>
+<body class="auth-body">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">Furniture Rental</a>
+      <ul class="nav-links">
+        <li><a href="index.html#featured">Categories</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Signup Form Section -->
+  <section class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h2>Create Account</h2>
+        <p>Join us and start renting furniture today</p>
+      </div>
+      
+      <form id="signupForm" class="auth-form">
+        <div class="form-group">
+          <div class="input-icon" id="nameInputContainer">
+            <i class="fas fa-user"></i>
+            <input type="text" id="fullName" placeholder="Full Name" required>
+          </div>
+          <div class="error-message" id="nameError">Please enter your full name</div>
+        </div>
+        
+        <div class="form-group">
+          <div class="input-icon" id="emailInputContainer">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" placeholder="Email Address" required>
+          </div>
+          <div class="error-message" id="emailError">Please enter a valid email address</div>
+        </div>
+        
+        <div class="form-group">
+          <div class="input-icon" id="phoneInputContainer">
+            <i class="fas fa-phone"></i>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+          </div>
+          <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+        </div>
+        
+        <div class="form-group">
+          <div class="input-icon" id="passwordInputContainer">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" placeholder="Password" required>
+          </div>
+          <div class="password-strength" id="passwordStrength">
+            <div>Password strength: <span id="strengthText">None</span></div>
+            <div class="strength-meter">
+              <div id="strengthMeter"></div>
+            </div>
+          </div>
+          <div class="error-message" id="passwordError">Password must be at least 8 characters with letters, numbers, and special characters</div>
+        </div>
+        
+        <div class="form-group">
+          <div class="input-icon" id="confirmPasswordInputContainer">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+          </div>
+          <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+        </div>
+        
+        <div class="form-options">
+          <label class="terms">
+            <input type="checkbox" id="termsCheckbox" required>
+            <span>I agree to the <a href="#">Terms & Conditions</a></span>
+          </label>
+          <div class="error-message" id="termsError">You must agree to the Terms & Conditions</div>
+        </div>
+        
+        <button type="submit" class="auth-button" id="submitButton">Create Account</button>
+      </form>
+      
+      <div class="social-login">
+        <p>Or sign up with</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      
+      <div class="auth-footer">
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script src="signup_validation.js"></script>
+</body>
+</html>
