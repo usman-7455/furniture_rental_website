@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Furniture - Furniture Rental</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="browse.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="browse-page">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">Furniture Rental</a>
+      <ul class="nav-links">
+        <li><a href="index.html#featured">Categories</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="why-choose-us.html">Why Choose Us</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="login.html" class="auth-link">Login</a></li>
+        <li><a href="signup.html" class="auth-link signup">Sign Up</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Browse Header -->
+  <header class="browse-header">
+    <div class="search-container fade-in">
+      <div class="search-box">
+        <input type="text" id="search" placeholder="Search furniture...">
+        <button type="button"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Browse Section -->
+  <main class="browse-section">
+    <!-- Filters Sidebar -->
+    <aside class="filters-sidebar slide-in-left">
+      <div class="filters-header">
+        <h3>Filters</h3>
+        <button class="clear-filters">Clear All</button>
+      </div>
+
+      <div class="filter-group">
+        <h4>Categories</h4>
+        <div class="filter-options">
+          <label><input type="checkbox" value="sofa"> Sofas</label>
+          <label><input type="checkbox" value="bed"> Beds</label>
+          <label><input type="checkbox" value="table"> Tables</label>
+          <label><input type="checkbox" value="chair"> Chairs</label>
+          <label><input type="checkbox" value="office"> Office Furniture</label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Price Range</h4>
+        <div class="price-range">
+          <input type="range" id="price-range" min="0" max="1000" step="50">
+          <div class="price-inputs">
+            <span>$0</span>
+            <span id="price-value">$500</span>
+            <span>$1000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Rental Duration</h4>
+        <div class="filter-options">
+          <label><input type="radio" name="duration" value="1"> 1-3 Months</label>
+          <label><input type="radio" name="duration" value="3"> 3-6 Months</label>
+          <label><input type="radio" name="duration" value="6"> 6-12 Months</label>
+          <label><input type="radio" name="duration" value="12"> 12+ Months</label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Style</h4>
+        <div class="filter-options">
+          <label><input type="checkbox" value="modern"> Modern</label>
+          <label><input type="checkbox" value="traditional"> Traditional</label>
+          <label><input type="checkbox" value="contemporary"> Contemporary</label>
+          <label><input type="checkbox" value="minimalist"> Minimalist</label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Products Section -->
+    <section class="products-section">
+      <div class="products-header fade-in">
+        <div class="results-count">
+          <span>24 items found</span>
+        </div>
+        <div class="sort-options">
+          <select id="sort-select">
+            <option value="recommended">Recommended</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="newest">Newest First</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="products-grid">
+        <!-- Product Cards -->
+        <div class="product-card fade-in">
+          <div class="product-image">
+            <img src="sofa.png" alt="Modern Sofa">
+            <div class="product-tags">
+              <span class="tag">Popular</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Modern Comfort Sofa</h3>
+            <p class="product-description">Elegant 3-seater sofa with premium fabric</p>
+            <div class="product-meta">
+              <span class="price">$45/month</span>
+              <button class="rent-now">Rent Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="bed.jpeg" alt="Queen Size Bed">
+            <div class="product-tags">
+              <span class="tag new">New</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Premium Queen Bed</h3>
+            <p class="product-description">Queen size bed with memory foam mattress</p>
+            <div class="product-meta">
+              <span class="price">$69.99/month</span>
+              <span class="duration">Min. 6 months</span>
+            </div>
+            <button class="rent-now">Rent Now</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="table.png" alt="Dining Table">
+          </div>
+          <div class="product-info">
+            <h3>Modern Dining Table</h3>
+            <p class="product-description">6-seater dining table with glass top</p>
+            <div class="product-meta">
+              <span class="price">$39.99/month</span>
+              <span class="duration">Min. 3 months</span>
+            </div>
+            <button class="rent-now">Rent Now</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="chair.png" alt="Office Chair">
+            <div class="product-tags">
+              <span class="tag sale">Sale</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Ergonomic Office Chair</h3>
+            <p class="product-description">Adjustable office chair with lumbar support</p>
+            <div class="product-meta">
+              <span class="price">$29.99/month</span>
+              <span class="duration">Min. 3 months</span>
+            </div>
+            <button class="rent-now">Rent Now</button>
+          </div>
+        </div>
+
+        <!-- Add more product cards here -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination fade-in">
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <span>...</span>
+        <button class="page-btn">10</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="small-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <span>Contact: <a href="tel:+123456789">+123 456 789</a></span>
+        <span class="divider">|</span>
+        <span><a href="mailto:info@furniturerental.com">info@furniturerental.com</a></span>
+        <span class="divider">|</span>
+        <span class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </span>
+      </div>
+      <p class="copyright">&copy; 2025 Furniture Rental</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Navbar Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Price Range Slider
+    const priceRange = document.getElementById('price-range');
+    const priceValue = document.getElementById('price-value');
+
+    priceRange.addEventListener('input', (e) => {
+      priceValue.textContent = `$${e.target.value}`;
+    });
+
+    // Clear Filters
+    const clearFilters = document.querySelector('.clear-filters');
+    clearFilters.addEventListener('click', () => {
+      document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
+      document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+      priceRange.value = 500;
+      priceValue.textContent = '$500';
+    });
+
+    // Search Functionality
+    const searchInput = document.getElementById('search');
+    searchInput.addEventListener('input', (e) => {
+      // Implement search logic here
+      console.log('Searching for:', e.target.value);
+    });
+
+    // Rent Now Button Click
+    document.querySelectorAll('.rent-now').forEach(button => {
+      button.addEventListener('click', () => {
+        // Check if user is logged in
+        const isLoggedIn = false; // Replace with actual login check
+        if (!isLoggedIn) {
+          window.location.href = 'login.html';
+        } else {
+          // Proceed with rental process
+          console.log('Processing rental...');
+        }
+      });
+    });
+  </script>
+</body>
+</html> 
